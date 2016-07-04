@@ -1,0 +1,21 @@
+#! /usr/bin/ruby
+
+root = File.expand_path '..', __dir__
+
+$:.unshift "#{root}/lib"
+
+ENV['BUNDLE_GEMFILE'] = "#{root}/Gemfile"
+
+require 'tramp/setup'
+
+require 'bundler'
+require 'vagrant'
+require 'tramp'
+
+include Vagrant
+
+File.write 'Vagrantfile', "load '#{root}/Vagrantfile'"
+
+( Tramp::Command.new ARGV, Environment.new(
+	ui_class: UI::Colored
+) ).execute

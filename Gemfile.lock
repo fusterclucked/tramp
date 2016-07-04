@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    tramp (0.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  tramp!
+
+BUNDLED WITH
+   1.12.5
